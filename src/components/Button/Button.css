@@ -1,4 +1,5 @@
 .cs-button {
+  font-weight: 600;
   height: 40px;
   padding: 8px 24px;
   position: relative;
@@ -93,9 +94,12 @@
 .cs-button--warning {
   background-color: var(--white);
   color: var(--app-tint);
-  font-weight: 600;
 }
 .cs-button--white {
   background-color: var(--white);
+  color: var(--black);
+}
+.cs-button--grey {
+  background-color: var(--grey-light);
   color: var(--black);
 }

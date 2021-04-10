@@ -1,6 +1,5 @@
 import { useState } from 'react';
 
-import Heading from '../../components/Heading';
 import Loading from '../../components/Loading';
 import Search from '../../components/Search';
 import Footer from '../../components/Footer';

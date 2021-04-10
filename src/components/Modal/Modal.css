@@ -29,8 +29,17 @@
 }
 
 .cs-modal__header {
-  padding: 15px;
+  align-items: center;
   border-bottom: var(--with-border);
+  border-width: 3px;
+  display: flex;
+  justify-content: space-between;
+  padding: 15px;
+}
+.cs-modal__header .close {
+  border-radius: 50%;
+  height: auto;
+  padding: 6px;
 }
 .cs-modal__body {
   padding: 20px;
@@ -44,6 +53,7 @@
 .cs-modal__title {
   margin: 0;
   font-size: 22px;
+  font-weight: 600;
 }
 
 /* Slide */

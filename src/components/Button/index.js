@@ -18,6 +18,7 @@ const ButtonColorVariant = {
   Danger: 'danger',
   Warning: 'warning',
   White: 'white',
+  Grey: 'grey',
 };
 
 const ButtonSizeClasses = {
@@ -35,6 +36,7 @@ const ButtonColorClasses = {
   [ButtonColorVariant.Danger]: 'cs-button--danger',
   [ButtonColorVariant.Warning]: 'cs-button--warning',
   [ButtonColorVariant.White]: 'cs-button--white',
+  [ButtonColorVariant.Grey]: 'cs-button--grey',
 };
 
 const Button = ({

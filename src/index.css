@@ -6,6 +6,7 @@
   --dark-black: #212121;
   --black: #4a4a4a;
   --grey: #888b90;
+  --grey-light: #c4c4c4;
   --silver: #dcdcdf;
 
   --alpha-005: rgba(0, 0, 0, 0.05);
@@ -54,6 +55,10 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+a {
+  color: var(--black);
+}
+
 h1,
 h2,
 h3,
@@ -68,6 +73,12 @@ select,
 textarea,
 select {
   font-family: var(--main-font);
+}
+
+/* Helper classes */
+.helper-text {
+  color: var(--grey);
+  font-size: 0.9rem;
 }
 
 /* Transition */

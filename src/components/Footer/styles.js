@@ -10,7 +10,7 @@ export const SFooter = styled.footer`
   padding: 0.9rem 1rem;
   position: fixed;
   right: 0;
-  z-index: 10;
+  z-index: 1;
 
   &::before {
     background-color: var(--alpha-01);

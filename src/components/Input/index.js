@@ -14,12 +14,18 @@ const InputSizeClasses = {
 
 const Input = ({
   className = '',
+  label = '',
   size = InputSizeVariant.Regular,
   ...rest
 }) => {
   const classes = classnames('cs-input', InputSizeClasses[size], className);
 
-  return <input className={classes} {...rest} />;
+  return (
+    <div class='cs-control'>
+      {label && <label className='cs-label'>{label}</label>}
+      <input className={classes} {...rest} />
+    </div>
+  );
 };
 
 export default Input;

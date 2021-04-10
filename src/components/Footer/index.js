@@ -1,7 +1,7 @@
 import Button from '../Button';
+import AddCounter from '../AddCounter';
 import TrashBinIcon from '../Icons/TrashBinIcon';
 import OpenIcon from '../Icons/OpenIcon';
-import NewIcon from '../Icons/NewIcon';
 
 import { SFooter } from './styles';
 
@@ -14,9 +14,7 @@ const Footer = () => {
       <Button className='SFooter__share' color='white' kind='raised'>
         <OpenIcon />
       </Button>
-      <Button className='SFooter__new'>
-        <NewIcon fill='var(--white)' />
-      </Button>
+      <AddCounter className='SFooter__new' />
     </SFooter>
   );
 };

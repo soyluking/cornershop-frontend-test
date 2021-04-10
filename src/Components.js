@@ -3,19 +3,18 @@ import {
   CloseIcon,
   DecrementIcon,
   Alert,
-  Modal,
   IncrementIcon,
   NewIcon,
   OpenIcon,
   SearchIcon,
   TrashBinIcon,
   useAlert,
-  useModal,
 } from './ui';
 
 import Input from './components/Input';
 import Button from './components/Button';
 import Loading from './components/Loading';
+import Modal, { useModal } from './components/Modal';
 
 import { ReactComponent as Logo } from './logo.svg';
 

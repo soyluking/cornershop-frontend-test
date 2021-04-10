@@ -25,3 +25,13 @@
 .cs-input--big {
   height: 48px;
 }
+
+.cs-control {
+  width: 100%;
+}
+
+.cs-label {
+  display: inline-block;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
