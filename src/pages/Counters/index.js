@@ -42,6 +42,15 @@ const Counters = () => {
         'Number of times I’ve forgotten my mother’s name because I was high on Frugelés.',
       count: 10,
     },
+    { id: 4, title: 'Tazas de cafe', count: 0 },
+    { id: 5, title: 'Horas de estudio', count: 5 },
+    {
+      id: 6,
+      title:
+        'Number of times I’ve forgotten my mother’s name because I was high on Frugelés.',
+      count: 10,
+    },
+    { id: 7, title: 'Tazas de cafe', count: 0 },
   ]);
   const [error, setError] = useState(false);
   const [search, setSearch] = useState('');
