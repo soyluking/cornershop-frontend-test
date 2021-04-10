@@ -2,6 +2,7 @@ import React from 'react';
 import classnames from 'classnames';
 
 import './Button.css';
+import { Link } from 'wouter';
 
 const ButtonSizeVariant = {
   Regular: 'regular',
@@ -39,6 +40,7 @@ const Button = ({
   color = ButtonColorVariant.Regular,
   kind = ButtonKindVariant.Regular,
   size = ButtonSizeVariant.Regular,
+  href,
   ...rest
 }) => {
   const classes = classnames(
@@ -46,8 +48,17 @@ const Button = ({
     ButtonColorClasses[color],
     ButtonKindClasses[kind],
     ButtonSizeClasses[size],
-    className
+    className,
   );
+
+  if (href)
+    return (
+      <Link href={href}>
+        <button className={classes} {...rest}>
+          <span>{children}</span>
+        </button>
+      </Link>
+    );
 
   return (
     <button className={classes} {...rest}>
