@@ -1,5 +1,5 @@
 .cs-button {
-  height: 40px;
+  height: 44px;
   padding: 8px 24px;
   position: relative;
   display: inline-block;
@@ -55,7 +55,7 @@
 /* Size */
 .cs-button--big {
   padding: 12px 18px;
-  height: 48px;
+  height: 50px;
 }
 
 /* Kind */

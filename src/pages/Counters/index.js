@@ -1,28 +1,14 @@
 import { useState } from 'react';
 
 import Heading from '../../components/Heading';
-import Input from '../../components/Input';
 import Button from '../../components/Button';
 import Loading from '../../components/Loading';
+import Search from '../../components/Search';
 import Footer from '../../components/Footer';
-import SearchIcon from '../../components/Icons/SearchIcon';
 import CountersList from '../../components/CountersList';
+import CountersSummary from '../../components/CountersSummary';
 
 import { SCounters } from './styles';
-
-const Search = ({ search, setSearch }) => (
-  <div>
-    <SearchIcon />
-    <Input
-      placeholder='Search Counters'
-      value={search}
-      onChange={e => setSearch(e.target.value)}
-    />
-    <Button color='white' onClick={() => setSearch('')}>
-      Cancel
-    </Button>
-  </div>
-);
 
 const ErrorMessage = () => (
   <div>
@@ -69,7 +55,12 @@ const Counters = () => {
 
       {!loading && !error && !counters.length && <EmptyMessage />}
 
-      {!loading && counters.length && <CountersList counters={counters} />}
+      {!loading && counters.length && (
+        <>
+          <CountersSummary counters={counters} />
+          <CountersList counters={counters} />
+        </>
+      )}
 
       <Footer></Footer>
     </SCounters>
