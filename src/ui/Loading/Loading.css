@@ -1,0 +1,35 @@
+/* Activity indicator taken from
+https://tobiasahlin.com/spinkit/ */
+
+.cs-loading-spinner {
+  position: relative;
+  width: 114px;
+  height: 114px;
+}
+
+.cs-loading-spinner__bouncer {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background-color: #FF9500;
+  opacity: 0.5;
+  position: absolute;
+  animation: bounce 1800ms infinite ease-in-out;
+}
+
+.cs-loading-spinner__bouncer:nth-child(2) {
+  animation: bounce 1800ms infinite ease-in-out;
+  animation-delay: -200ms;
+}
+
+.cs-loading-spinner__bouncer:last-child {
+  animation: bounce 1800ms infinite ease-in-out;
+  animation-delay: -400ms;
+}
+@keyframes bounce {
+  0%, 100% { 
+    transform: scale(0.0);
+  } 50% { 
+    transform: scale(1.0);
+  }
+}

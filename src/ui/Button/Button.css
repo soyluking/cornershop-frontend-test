@@ -1,0 +1,83 @@
+.cs-button {
+  height: 40px;
+  padding: 8px 24px;
+  position: relative;
+  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  
+  background-color: var(--app-tint);
+  border: var(--with-border);
+  border-radius: var(--with-radius);
+  box-shadow: var(--with-shadow);
+  color: var(--white);
+  cursor: pointer;
+  font-size: inherit;
+  transition: 195ms box-shadow ease-in;
+}
+.cs-button::before {
+  content: "";
+  position: absolute;
+  top: -1px;
+  right: -1px;
+  bottom: -1px;
+  left: -1px;
+  border-radius: inherit;
+  pointer-events: none;
+  z-index: 0;
+  transition: 195ms background-color ease-in;
+}
+.cs-button:not(.cs-button--flat):hover {
+  box-shadow: var(--with-shadow--hover);
+}
+.cs-button--raised:hover {
+  box-shadow: var(--with-shadow--raised--hover);
+}
+.cs-button:hover::before {
+  background-color: var(--alpha-005);
+}
+
+.cs-button > span {
+  z-index: 1;
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cs-button:disabled,
+.cs-button[disabled] {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Size */
+.cs-button--big {
+  padding: 12px 18px;
+  height: 48px;
+}
+
+/* Kind */
+.cs-button--raised {
+  border-color: transparent;
+  box-shadow: var(--with-shadow--raised);
+}
+.cs-button--flat {
+  border-color: transparent;
+  box-shadow: none;
+}
+.cs-button--flat.cs-button--white,
+.cs-button--raised.cs-button--white {
+  color: var(--app-tint);
+}
+
+/* Color */
+.cs-button--danger {
+  background-color: var(--white);
+  color: var(--destructive-red);
+}
+.cs-button--white {
+  background-color: var(--white);
+  color: var(--black);
+}

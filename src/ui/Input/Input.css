@@ -1,0 +1,23 @@
+.cs-input {
+  display: block;
+  height: 44px;
+  width: 100%;
+  padding: 12px;
+
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+
+  background-color: white;
+  border: var(--with-border);
+  border-radius: var(--with-radius);
+  box-shadow: inset 0 4px 8px 0 var(--alpha-005);
+  
+  font-family: inherit;
+  font-weight: 400;;
+}
+
+.cs-input:focus {
+  outline: 2px solid var(--app-tint);
+  outline-style: auto;
+}

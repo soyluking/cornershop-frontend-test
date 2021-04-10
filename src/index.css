@@ -1,0 +1,80 @@
+:root {
+  /* Colors */
+  --app-tint: #ff9500;
+  --destructive-red: #ff3b30;
+  --white: #fff;
+  --dark-black: #212121;
+  --black: #4a4a4a;
+  --grey: #888b90;
+  --silver: #dcdcdf;
+
+  --alpha-005: rgba(0,0,0,0.05);
+  --alpha-01: rgba(0,0,0,0.1);
+  --alpha-015: rgba(0,0,0,0.15);
+  --alpha-05: rgba(0,0,0,0.5);
+
+  /* Fonts */
+  --main-font: 'Avenir Next', 'Avenir', 'Futura', 'Lucida Grande', Helvetica, Arial, Verdana, sans-serif;
+  --line-height: 1.38636;
+
+  /* Borders */
+  --with-border: 1px solid var(--alpha-01);
+  --with-border--dark: 1px solid var(--alpha-015);
+  
+  --with-radius--small: 6px;
+  --with-radius: 8px;
+  --with-radius--large: 10px;
+
+  /* Shadows */
+  --with-shadow: 0 2px 8px 0 var(--alpha-005);
+  --with-shadow--hover: 
+  0 2px 8px 0 var(--alpha-005),
+  0 4px 16px 0 var(--alpha-005),
+  0 8px 32px 0 var(--alpha-005);
+
+  --with-shadow--raised: 0 2px 8px 0 var(--alpha-015);
+  --with-shadow--raised--hover: 
+  0 2px 8px 0 var(--alpha-015),
+  0 4px 16px 0 var(--alpha-015),
+  0 8px 32px 0 var(--alpha-015);
+
+  --with-shadow--alert: 0 24px 38px 0 var(--alpha-015);
+
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  background-color: var(--white);
+  color: var(--dark-black);
+  font-family: var(--main-font);
+  font-size: 17px;
+  line-height: var(--line-height);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 500;
+}
+
+input,
+select,
+textarea,
+select {
+  font-family: var(--main-font);
+}
+
+/* Transition */
+.cs-fade-transition {
+  transition: opacity 195ms ease-in-out;
+}
+.cs-fade-exited,
+.cs-fade-exiting,
+.cs-fade-entering {
+  opacity: 0;
+}
+.cs-fade-entered {
+  opacity: 1;
+}
