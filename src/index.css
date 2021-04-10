@@ -49,6 +49,8 @@ body {
   font-family: var(--main-font);
   font-size: 17px;
   line-height: var(--line-height);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 h1,
