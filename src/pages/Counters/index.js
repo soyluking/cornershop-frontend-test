@@ -1,35 +1,15 @@
 import { useState } from 'react';
 
 import Heading from '../../components/Heading';
-import Button from '../../components/Button';
 import Loading from '../../components/Loading';
 import Search from '../../components/Search';
 import Footer from '../../components/Footer';
 import CountersList from '../../components/CountersList';
 import CountersSummary from '../../components/CountersSummary';
+import EmptyMessage from '../../components/EmptyMessage';
+import ErrorMessage from '../../components/ErrorMessage';
 
 import { SCounters, SCountersList } from './styles';
-
-const ErrorMessage = () => (
-  <div>
-    <Heading
-      title='Couldn’t load the counters'
-      text='The Internet connection appears to be offline.'
-    />
-    <Button color='warning' kind='raised'>
-      Retry
-    </Button>
-  </div>
-);
-
-const EmptyMessage = () => (
-  <div>
-    <Heading
-      title='No counters yet'
-      text='"When I started counting my blessings, my whole life turned around."<br>—Willie Nelson'
-    />
-  </div>
-);
 
 const Counters = () => {
   const [loading, setLoading] = useState(false);
@@ -67,13 +47,13 @@ const Counters = () => {
 
       {!loading && !error && !counters.length && <EmptyMessage />}
 
-      {!loading && counters.length && (
-        <>
+      {!loading && !error && counters.length && (
+        <div style={{ paddingBottom: '4rem' }}>
           <CountersSummary counters={counters} />
           <SCountersList>
             <CountersList counters={counters} />
           </SCountersList>
-        </>
+        </div>
       )}
 
       <Footer></Footer>
