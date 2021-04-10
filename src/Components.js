@@ -1,13 +1,11 @@
 import React from 'react';
 import {
-  Button,
   CloseIcon,
   DecrementIcon,
   Alert,
   Modal,
   IncrementIcon,
   Input,
-  Loading,
   NewIcon,
   OpenIcon,
   SearchIcon,
@@ -15,6 +13,9 @@ import {
   useAlert,
   useModal,
 } from './ui';
+
+import Button from './components/Button';
+import Loading from './components/Loading';
 
 import { ReactComponent as Logo } from './logo.svg';
 

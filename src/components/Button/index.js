@@ -16,6 +16,7 @@ const ButtonKindVariant = {
 const ButtonColorVariant = {
   Regular: 'regular',
   Danger: 'danger',
+  Warning: 'warning',
   White: 'white',
 };
 
@@ -31,6 +32,7 @@ const ButtonKindClasses = {
 const ButtonColorClasses = {
   [ButtonColorVariant.Regular]: '',
   [ButtonColorVariant.Danger]: 'cs-button--danger',
+  [ButtonColorVariant.Warning]: 'cs-button--warning',
   [ButtonColorVariant.White]: 'cs-button--white',
 };
 

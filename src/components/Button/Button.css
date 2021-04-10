@@ -6,7 +6,7 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  
+
   background-color: var(--app-tint);
   border: var(--with-border);
   border-radius: var(--with-radius);
@@ -17,7 +17,7 @@
   transition: 195ms box-shadow ease-in;
 }
 .cs-button::before {
-  content: "";
+  content: '';
   position: absolute;
   top: -1px;
   right: -1px;
@@ -76,6 +76,11 @@
 .cs-button--danger {
   background-color: var(--white);
   color: var(--destructive-red);
+}
+.cs-button--warning {
+  background-color: var(--white);
+  color: var(--app-tint);
+  font-weight: 600;
 }
 .cs-button--white {
   background-color: var(--white);

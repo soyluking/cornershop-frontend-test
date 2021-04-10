@@ -1,22 +1,20 @@
 import { ReactComponent as Logo } from '../../logo.svg';
 import { Button } from '../../ui/Button';
-import Title from '../../components/Title';
-import Text from '../../components/Text';
+import Heading from '../../components/Heading';
 
-import { SWelcome, SWelcomeHeader } from './styles';
+import { SWelcome, SWelcomeHeading } from './styles';
 
 const Welcome = () => {
   return (
     <SWelcome>
       <Logo />
 
-      <SWelcomeHeader>
-        <Title>Welcome to Counters</Title>
-        <Text>
-          Capture cups of lattes, frapuccinos, or anything else that can be
-          counted.
-        </Text>
-      </SWelcomeHeader>
+      <SWelcomeHeading>
+        <Heading
+          title='Welcome to Counters'
+          text='Capture cups of lattes, frapuccinos, or anything else that can be counted.'
+        />
+      </SWelcomeHeading>
 
       <Button kind='raised' href='/counters'>
         Get started
