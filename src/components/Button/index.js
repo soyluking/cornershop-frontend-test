@@ -1,4 +1,3 @@
-import React from 'react';
 import classnames from 'classnames';
 
 import './Button.css';
@@ -12,6 +11,7 @@ const ButtonKindVariant = {
   Regular: 'regular',
   Flat: 'flat',
   Raised: 'raised',
+  Text: 'text',
 };
 const ButtonColorVariant = {
   Regular: 'regular',
@@ -28,6 +28,7 @@ const ButtonKindClasses = {
   [ButtonKindVariant.Regular]: '',
   [ButtonKindVariant.Flat]: 'cs-button--flat',
   [ButtonKindVariant.Raised]: 'cs-button--raised',
+  [ButtonKindVariant.Text]: 'cs-button--text',
 };
 const ButtonColorClasses = {
   [ButtonColorVariant.Regular]: '',

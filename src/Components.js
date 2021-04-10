@@ -5,7 +5,6 @@ import {
   Alert,
   Modal,
   IncrementIcon,
-  Input,
   NewIcon,
   OpenIcon,
   SearchIcon,
@@ -14,6 +13,7 @@ import {
   useModal,
 } from './ui';
 
+import Input from './components/Input';
 import Button from './components/Button';
 import Loading from './components/Loading';
 

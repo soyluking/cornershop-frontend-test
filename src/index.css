@@ -12,6 +12,7 @@
   --alpha-01: rgba(0, 0, 0, 0.1);
   --alpha-015: rgba(0, 0, 0, 0.15);
   --alpha-05: rgba(0, 0, 0, 0.5);
+  --app-tint-alpha-02: rgba(255, 149, 0, 0.2);
 
   /* Fonts */
   --main-font: 'Avenir Next', 'Avenir', 'Futura', 'Lucida Grande', Helvetica,

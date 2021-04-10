@@ -12,12 +12,12 @@ const InputSizeClasses = {
   [InputSizeVariant.Big]: 'cs-input--big',
 };
 
-const Input = ({ className, size = InputSizeVariant.Regular, ...rest }) => {
-  const classes = classnames(
-    'cs-input',
-    InputSizeClasses[InputSizeVariant],
-    className,
-  );
+const Input = ({
+  className = '',
+  size = InputSizeVariant.Regular,
+  ...rest
+}) => {
+  const classes = classnames('cs-input', InputSizeClasses[size], className);
 
   return <input className={classes} {...rest} />;
 };

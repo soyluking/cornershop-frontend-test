@@ -1,5 +1,5 @@
 .cs-button {
-  height: 44px;
+  height: 40px;
   padding: 8px 24px;
   position: relative;
   display: inline-block;
@@ -55,7 +55,7 @@
 /* Size */
 .cs-button--big {
   padding: 12px 18px;
-  height: 50px;
+  height: 48px;
 }
 
 /* Kind */
@@ -70,6 +70,19 @@
 .cs-button--flat.cs-button--white,
 .cs-button--raised.cs-button--white {
   color: var(--app-tint);
+}
+.cs-button--text {
+  background-color: transparent;
+  border-color: transparent;
+  box-shadow: none;
+  color: var(--app-tint);
+  height: auto;
+  padding: 5px;
+}
+.cs-button--text:disabled,
+.cs-button--text[disabled] {
+  color: var(--silver);
+  opacity: 1;
 }
 
 /* Color */

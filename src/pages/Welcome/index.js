@@ -1,5 +1,5 @@
 import { ReactComponent as Logo } from '../../logo.svg';
-import { Button } from '../../ui/Button';
+import Button from '../../components/Button';
 import Heading from '../../components/Heading';
 
 import { SWelcome, SWelcomeHeading } from './styles';

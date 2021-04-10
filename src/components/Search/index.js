@@ -10,10 +10,11 @@ const Search = ({ search, setSearch }) => (
     <Input
       value={search}
       placeholder='Search Counters'
+      size='big'
       onChange={e => setSearch(e.target.value)}
     />
     {search && (
-      <Button color='white' onClick={() => setSearch('')}>
+      <Button color='white' size='big' onClick={() => setSearch('')}>
         Cancel
       </Button>
     )}

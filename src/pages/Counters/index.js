@@ -8,7 +8,7 @@ import Footer from '../../components/Footer';
 import CountersList from '../../components/CountersList';
 import CountersSummary from '../../components/CountersSummary';
 
-import { SCounters } from './styles';
+import { SCounters, SCountersList } from './styles';
 
 const ErrorMessage = () => (
   <div>
@@ -36,6 +36,12 @@ const Counters = () => {
   const [counters, setCounters] = useState([
     { id: 1, title: 'Tazas de cafe', count: 0 },
     { id: 2, title: 'Horas de estudio', count: 5 },
+    {
+      id: 3,
+      title:
+        'Number of times I’ve forgotten my mother’s name because I was high on Frugelés.',
+      count: 10,
+    },
   ]);
   const [error, setError] = useState(false);
   const [search, setSearch] = useState('');
@@ -44,10 +50,7 @@ const Counters = () => {
 
   return (
     <SCounters>
-      <Search
-        counters={counters}
-        search={search}
-        setSearch={handleSetSearch}></Search>
+      <Search counters={counters} search={search} setSearch={handleSetSearch} />
 
       {loading && <Loading kind='absolute' />}
 
@@ -58,7 +61,9 @@ const Counters = () => {
       {!loading && counters.length && (
         <>
           <CountersSummary counters={counters} />
-          <CountersList counters={counters} />
+          <SCountersList>
+            <CountersList counters={counters} />
+          </SCountersList>
         </>
       )}
 

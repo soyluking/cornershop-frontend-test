@@ -1,7 +1,7 @@
 import Counter from '../Counter';
 
 const CountersList = ({ counters }) => (
-  <div>
+  <>
     {counters.map(counter => (
       <Counter
         key={counter.id}
@@ -10,7 +10,7 @@ const CountersList = ({ counters }) => (
         count={counter.count}
       />
     ))}
-  </div>
+  </>
 );
 
 export default CountersList;
