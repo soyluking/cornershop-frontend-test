@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { memo, useState } from 'react';
 
 import Button from './../Button';
 import IncrementIcon from '../Icons/IncrementIcon';
@@ -11,13 +11,13 @@ import {
   SCounterLabel,
 } from './styles';
 
-const Counter = ({ id, title, count }) => {
+const Counter = memo(({ id, title, count }) => {
   const [selected, setSelected] = useState(false);
 
   const handleSetSelected = () => setSelected(!selected);
 
   return (
-    <SCounter selected={selected}>
+    <SCounter id={`counter-${id}`} selected={selected}>
       <SCounterTitle onClick={handleSetSelected}>{title}</SCounterTitle>
 
       <SCounterActions>
@@ -38,6 +38,6 @@ const Counter = ({ id, title, count }) => {
       </SCounterActions>
     </SCounter>
   );
-};
+});
 
 export default Counter;

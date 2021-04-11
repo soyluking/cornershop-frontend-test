@@ -50,7 +50,7 @@ const Counters = () => {
         </div>
       )}
 
-      <Footer></Footer>
+      <Footer />
     </SCounters>
   );
 };

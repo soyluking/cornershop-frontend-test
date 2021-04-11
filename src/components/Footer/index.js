@@ -1,3 +1,6 @@
+import { memo, useContext } from 'react';
+import CountersContext from '../../context/CountersContext';
+
 import Button from '../Button';
 import AddCounter from '../AddCounter';
 import TrashBinIcon from '../Icons/TrashBinIcon';
@@ -5,7 +8,8 @@ import OpenIcon from '../Icons/OpenIcon';
 
 import { SFooter } from './styles';
 
-const Footer = () => {
+const Footer = memo(() => {
+  console.log(useContext(CountersContext));
   return (
     <SFooter>
       <Button className='SFooter__delete' color='danger' kind='raised'>
@@ -17,6 +21,6 @@ const Footer = () => {
       <AddCounter className='SFooter__new' />
     </SFooter>
   );
-};
+});
 
 export default Footer;
