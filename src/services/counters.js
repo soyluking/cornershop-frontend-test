@@ -12,7 +12,7 @@ export const getCounters = async () => {
   return response.data;
 };
 
-export const addCounter = async title => {
+export const createCounter = async title => {
   const response = await instance.post('', { title });
   return response.data;
 };

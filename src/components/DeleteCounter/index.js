@@ -1,24 +1,24 @@
 import { useState } from 'react';
 import { useMutation, useQueryClient } from 'react-query';
 
-import { addCounter } from '../../services/counters';
+import { createCounter } from '../../services/counters';
 
 import Alert from '../Alert';
 import Button from '../Button';
 import Input from '../Input';
 import Loading from '../Loading';
 import Modal, { useModal } from '../Modal';
-import NewIcon from '../Icons/NewIcon';
+import TrashBinIcon from '../Icons/TrashBinIcon';
 import CloseIcon from '../Icons/CloseIcon';
 
-const AddCounter = ({ className }) => {
+const DeleteCounter = ({ className }) => {
   const queryClient = useQueryClient();
 
   const [title, setTitle] = useState('');
 
   const { isVisible: isModalVisible, hideModal, showModal } = useModal();
 
-  const addCounterMutation = useMutation(addCounter, {
+  const createCounterMutation = useMutation(createCounter, {
     onSuccess: () => {
       setTitle('');
       hideModal();
@@ -26,19 +26,19 @@ const AddCounter = ({ className }) => {
     },
   });
 
-  const handleAddCounter = e => {
+  const handleCreateCounter = e => {
     e.preventDefault();
-    addCounterMutation.mutate(title);
+    createCounterMutation.mutate(title);
   };
 
   return (
     <>
-      <Button className={className} onClick={showModal}>
-        <NewIcon fill='var(--white)' />
+      <Button className={className} color='danger' kind='raised'>
+        <TrashBinIcon fill='var(--destructive-red)' />
       </Button>
 
       <Modal isVisible={isModalVisible}>
-        <form onSubmit={handleAddCounter} autoComplete='off'>
+        <form onSubmit={handleCreateCounter} autoComplete='off'>
           <Modal.Header>
             <Button
               className='close'
@@ -68,9 +68,9 @@ const AddCounter = ({ className }) => {
           </Modal.Body>
         </form>
 
-        {addCounterMutation.isLoading && <Loading kind='absolute' />}
+        {createCounterMutation.isLoading && <Loading kind='absolute' />}
 
-        {addCounterMutation.isError && (
+        {createCounterMutation.isError && (
           <Alert
             isVisible={true}
             onClose={() => console.log('Alert was closed')}
@@ -80,7 +80,9 @@ const AddCounter = ({ className }) => {
               The Internet connection appears to be offline.
             </Alert.Message>
             <Alert.Actions>
-              <Button kind='raised' onClick={() => addCounterMutation.reset()}>
+              <Button
+                kind='raised'
+                onClick={() => createCounterMutation.reset()}>
                 Dismiss
               </Button>
             </Alert.Actions>
@@ -91,4 +93,4 @@ const AddCounter = ({ className }) => {
   );
 };
 
-export default AddCounter;
+export default DeleteCounter;
