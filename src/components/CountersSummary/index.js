@@ -1,6 +1,7 @@
 import { useContext } from 'react';
 
 import CountersContext from '../../context/CountersContext';
+import useCountTimes from '../../hooks/useCountTimes';
 
 import RefreshIcon from '../Icons/RefreshIcon';
 
@@ -13,10 +14,7 @@ import {
 
 const CountersSummary = ({ counters }) => {
   const { selected } = useContext(CountersContext);
-
-  const itemsLength = counters.length;
-  const itemsLabel = itemsLength === 1 ? 'item' : 'items';
-  const timesLabel = itemsLength === 1 ? 'time' : 'times';
+  const { timesLabel, itemsLabel } = useCountTimes({ counters });
 
   return (
     <SSummary>
@@ -24,12 +22,8 @@ const CountersSummary = ({ counters }) => {
         <SSummaryItems primary>{selected.length} selected</SSummaryItems>
       ) : (
         <>
-          <SSummaryItems>
-            {itemsLength} {itemsLabel}
-          </SSummaryItems>
-          <SSummaryTimes>
-            {itemsLength} {timesLabel}
-          </SSummaryTimes>
+          <SSummaryItems>{itemsLabel}</SSummaryItems>
+          <SSummaryTimes>{timesLabel}</SSummaryTimes>
         </>
       )}
 
