@@ -21,7 +21,7 @@ const Input = ({
   const classes = classnames('cs-input', InputSizeClasses[size], className);
 
   return (
-    <div class='cs-control'>
+    <div className='cs-control'>
       {label && <label className='cs-label'>{label}</label>}
       <input className={classes} {...rest} />
     </div>
