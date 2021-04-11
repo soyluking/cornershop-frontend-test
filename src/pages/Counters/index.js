@@ -39,9 +39,11 @@ const Counters = () => {
 
       {!isLoading && isError && <ErrorMessage />}
 
-      {!isLoading && !isError && !counters.length && <EmptyMessage />}
+      {!isLoading && !isError && !searchCounters.length && (
+        <EmptyMessage isSearching={search} />
+      )}
 
-      {!isLoading && !isError && counters.length && (
+      {!isLoading && !isError && searchCounters.length && (
         <div style={{ paddingBottom: '4rem' }}>
           <CountersSummary counters={searchCounters} />
           <SCountersList>
