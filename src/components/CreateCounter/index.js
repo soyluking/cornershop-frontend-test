@@ -73,7 +73,7 @@ const CreateCounter = ({ className }) => {
           </Modal.Body>
         </form>
 
-        {createCounterMutation.isLoading && <Loading kind='absolute' />}
+        {createCounterMutation.isLoading && <Loading />}
 
         {createCounterMutation.isError && (
           <Alert

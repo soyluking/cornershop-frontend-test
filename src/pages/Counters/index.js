@@ -35,7 +35,7 @@ const Counters = () => {
     <SCounters>
       <Search search={search} setSearch={handleSetSearch} />
 
-      {isLoading && <Loading kind='absolute' />}
+      {isLoading && <Loading />}
 
       {!isLoading && isError && <ErrorMessage />}
 

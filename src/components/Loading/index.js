@@ -12,7 +12,7 @@ const LoadingKindClasses = {
   [LoadingKindVariant.Absolute]: 'cs-loading-spinner--absolute',
 };
 
-const Loading = ({ kind = LoadingKindVariant.Regular }) => {
+const Loading = ({ kind = LoadingKindVariant.Absolute }) => {
   const classes = classnames('cs-loading-spinner', LoadingKindClasses[kind]);
 
   return (

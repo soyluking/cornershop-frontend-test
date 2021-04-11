@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const SHeading = styled.header`
-  padding: 0 30px;
+  padding: 0 1rem;
   text-align: center;
 `;
 
