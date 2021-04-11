@@ -21,6 +21,7 @@ const AddCounter = ({ className }) => {
   const addCounterMutation = useMutation(addCounter, {
     onSuccess: () => {
       setTitle('');
+      hideModal();
       queryClient.invalidateQueries('counters');
     },
   });
@@ -36,21 +37,19 @@ const AddCounter = ({ className }) => {
         <NewIcon fill='var(--white)' />
       </Button>
 
-      <Modal
-        isVisible={isModalVisible}
-        onClose={() => console.log('Modal was closed')}
-        onOpen={() => console.log('Modal was opened')}>
+      <Modal isVisible={isModalVisible}>
         <form onSubmit={handleAddCounter} autoComplete='off'>
           <Modal.Header>
             <Button
               className='close'
               color='grey'
               kind='flat'
+              type='button'
               onClick={hideModal}>
               <CloseIcon fill='var(--white)' />
             </Button>
             <Modal.Title>Create Counter</Modal.Title>
-            <Button kind='raised' disabled={!title}>
+            <Button kind='raised' disabled={!title} type='submit'>
               Save
             </Button>
           </Modal.Header>
@@ -59,16 +58,17 @@ const AddCounter = ({ className }) => {
               label='Name'
               value={title}
               placeholder='Days doing excersices'
+              autoComplete='off'
               onChange={e => setTitle(e.target.value)}
             />
 
             <p className='helper-text'>
               Give it a name. Creative block? See <a href=''>examples</a>.
             </p>
-
-            {addCounterMutation.isLoading && <Loading kind='absolute' />}
           </Modal.Body>
         </form>
+
+        {addCounterMutation.isLoading && <Loading kind='absolute' />}
 
         {addCounterMutation.isError && (
           <Alert
