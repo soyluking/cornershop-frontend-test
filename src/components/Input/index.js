@@ -1,3 +1,4 @@
+import { forwardRef } from 'react';
 import classnames from 'classnames';
 
 import './Input.css';
@@ -12,20 +13,20 @@ const InputSizeClasses = {
   [InputSizeVariant.Big]: 'cs-input--big',
 };
 
-const Input = ({
-  className = '',
-  label = '',
-  size = InputSizeVariant.Regular,
-  ...rest
-}) => {
-  const classes = classnames('cs-input', InputSizeClasses[size], className);
+const Input = forwardRef(
+  (
+    { className = '', label = '', size = InputSizeVariant.Regular, ...rest },
+    ref,
+  ) => {
+    const classes = classnames('cs-input', InputSizeClasses[size], className);
 
-  return (
-    <div className='cs-control'>
-      {label && <label className='cs-label'>{label}</label>}
-      <input className={classes} {...rest} />
-    </div>
-  );
-};
+    return (
+      <div className='cs-control'>
+        {label && <label className='cs-label'>{label}</label>}
+        <input className={classes} ref={ref} {...rest} />
+      </div>
+    );
+  },
+);
 
 export default Input;

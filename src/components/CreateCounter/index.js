@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import { useMutation, useQueryClient } from 'react-query';
 
 import { createCounter } from '../../services/counters';
@@ -15,6 +15,8 @@ const CreateCounter = ({ className }) => {
   const queryClient = useQueryClient();
 
   const [title, setTitle] = useState('');
+
+  const titleInput = useRef(null);
 
   const { isVisible: isModalVisible, hideModal, showModal } = useModal();
 
@@ -37,7 +39,9 @@ const CreateCounter = ({ className }) => {
         <NewIcon fill='var(--white)' />
       </Button>
 
-      <Modal isVisible={isModalVisible}>
+      <Modal
+        isVisible={isModalVisible}
+        onOpen={() => titleInput.current.focus()}>
         <form onSubmit={handleCreateCounter} autoComplete='off'>
           <Modal.Header>
             <Button
@@ -59,6 +63,7 @@ const CreateCounter = ({ className }) => {
               value={title}
               placeholder='Days doing excersices'
               autoComplete='off'
+              ref={titleInput}
               onChange={e => setTitle(e.target.value)}
             />
 
