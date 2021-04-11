@@ -1,4 +1,7 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { useQuery } from 'react-query';
+
+import { getCounters } from '../../services/getCounters';
 
 import Loading from '../../components/Loading';
 import Search from '../../components/Search';
@@ -11,28 +14,14 @@ import ErrorMessage from '../../components/ErrorMessage';
 import { SCounters, SCountersList } from './styles';
 
 const Counters = () => {
-  const [loading, setLoading] = useState(false);
-  const [counters, setCounters] = useState([
-    { id: 1, title: 'Tazas de cafe', count: 0 },
-    { id: 2, title: 'Horas de estudio', count: 5 },
-    {
-      id: 3,
-      title:
-        'Number of times I’ve forgotten my mother’s name because I was high on Frugelés.',
-      count: 10,
-    },
-    { id: 4, title: 'Tazas de cafe', count: 0 },
-    { id: 5, title: 'Horas de estudio', count: 5 },
-    {
-      id: 6,
-      title:
-        'Number of times I’ve forgotten my mother’s name because I was high on Frugelés.',
-      count: 10,
-    },
-    { id: 7, title: 'Tazas de cafe', count: 0 },
-  ]);
-  const [error, setError] = useState(false);
+  const { data, isLoading, isError } = useQuery('getCounters', getCounters);
+
+  const [counters, setCounters] = useState([]);
   const [search, setSearch] = useState('');
+
+  useEffect(() => {
+    if (!isLoading) setCounters(data);
+  }, [isLoading, data]);
 
   const handleSetSearch = value => setSearch(value);
 
@@ -40,13 +29,13 @@ const Counters = () => {
     <SCounters>
       <Search counters={counters} search={search} setSearch={handleSetSearch} />
 
-      {loading && <Loading kind='absolute' />}
+      {isLoading && <Loading kind='absolute' />}
 
-      {!loading && error && <ErrorMessage />}
+      {!isLoading && isError && <ErrorMessage />}
 
-      {!loading && !error && !counters.length && <EmptyMessage />}
+      {!isLoading && !isError && !counters.length && <EmptyMessage />}
 
-      {!loading && !error && counters.length && (
+      {!isLoading && !isError && counters.length && (
         <div style={{ paddingBottom: '4rem' }}>
           <CountersSummary counters={counters} />
           <SCountersList>
