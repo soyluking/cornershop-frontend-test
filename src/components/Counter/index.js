@@ -18,6 +18,7 @@ const Counter = memo(({ id, title, count }) => {
 
   const counterIsSelected = () =>
     selected.filter(counter => counter.id === id).length ? 'selected' : '';
+
   const handleSetSelected = () => concatSelected({ id, title, count });
 
   return (
