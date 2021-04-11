@@ -11,3 +11,8 @@ export const getCounters = async () => {
   const response = await instance.get();
   return response.data;
 };
+
+export const addCounter = async title => {
+  const response = await instance.post('', { title });
+  return response.data;
+};

@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useQuery } from 'react-query';
 
-import { getCounters } from '../../services/getCounters';
+import { getCounters } from '../../services/counters';
 
 import Loading from '../../components/Loading';
 import Search from '../../components/Search';
@@ -14,7 +14,7 @@ import ErrorMessage from '../../components/ErrorMessage';
 import { SCounters, SCountersList } from './styles';
 
 const Counters = () => {
-  const { data, isLoading, isError } = useQuery('getCounters', getCounters);
+  const { data, isLoading, isError } = useQuery('counters', getCounters);
 
   const [counters, setCounters] = useState([]);
   const [search, setSearch] = useState('');
