@@ -1,4 +1,6 @@
-import { memo, useState } from 'react';
+import { memo, useContext } from 'react';
+
+import CountersContext from '../../context/CountersContext';
 
 import Button from './../Button';
 import IncrementIcon from '../Icons/IncrementIcon';
@@ -12,12 +14,14 @@ import {
 } from './styles';
 
 const Counter = memo(({ id, title, count }) => {
-  const [selected, setSelected] = useState(false);
+  const { selected, concatSelected } = useContext(CountersContext);
 
-  const handleSetSelected = () => setSelected(!selected);
+  const counterIsSelected = () =>
+    selected.filter(counter => counter.id === id).length ? 'selected' : '';
+  const handleSetSelected = () => concatSelected({ id, title, count });
 
   return (
-    <SCounter id={`counter-${id}`} selected={selected}>
+    <SCounter id={`counter-${id}`} className={counterIsSelected()}>
       <SCounterTitle onClick={handleSetSelected}>{title}</SCounterTitle>
 
       <SCounterActions>

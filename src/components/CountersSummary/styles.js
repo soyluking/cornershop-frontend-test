@@ -6,7 +6,7 @@ export const SSummary = styled.div`
 `;
 
 export const SSummaryItems = styled.p`
-  color: var(--black);
+  color: ${props => (props.primary ? '#ff9500' : '#4a4a4a')};
   font-weight: 600;
   margin-right: 0.5rem;
 `;

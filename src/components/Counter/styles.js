@@ -8,9 +8,8 @@ export const SCounter = styled.div`
   position: relative;
   z-index: 1;
 
-  &:before {
-    background-color: ${props =>
-      props.selected ? 'var(--app-tint-alpha-02)' : 'transparent'};
+  &::before {
+    background-color: transparent;
     border-radius: var(--with-radius--small);
     bottom: 5px;
     content: '';
@@ -20,6 +19,10 @@ export const SCounter = styled.div`
     right: 10px;
     top: 5px;
     z-index: -1;
+  }
+
+  &.selected::before {
+    background-color: var(--app-tint-alpha-02);
   }
 `;
 

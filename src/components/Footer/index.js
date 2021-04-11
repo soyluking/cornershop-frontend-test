@@ -1,4 +1,5 @@
 import { memo, useContext } from 'react';
+
 import CountersContext from '../../context/CountersContext';
 
 import Button from '../Button';
@@ -9,15 +10,20 @@ import OpenIcon from '../Icons/OpenIcon';
 import { SFooter } from './styles';
 
 const Footer = memo(() => {
-  console.log(useContext(CountersContext));
+  const { selected } = useContext(CountersContext);
+
   return (
     <SFooter>
-      <Button className='SFooter__delete' color='danger' kind='raised'>
-        <TrashBinIcon fill='var(--destructive-red)' />
-      </Button>
-      <Button className='SFooter__share' color='white' kind='raised'>
-        <OpenIcon />
-      </Button>
+      {!!selected.length && (
+        <>
+          <Button className='SFooter__delete' color='danger' kind='raised'>
+            <TrashBinIcon fill='var(--destructive-red)' />
+          </Button>
+          <Button className='SFooter__share' color='white' kind='raised'>
+            <OpenIcon />
+          </Button>
+        </>
+      )}
       <AddCounter className='SFooter__new' />
     </SFooter>
   );
