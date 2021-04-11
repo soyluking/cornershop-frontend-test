@@ -25,9 +25,15 @@ const Counters = () => {
 
   const handleSetSearch = value => setSearch(value);
 
+  const searchCounters = !search
+    ? counters
+    : counters.filter(counter =>
+        counter.title.toLowerCase().includes(search.toLowerCase()),
+      );
+
   return (
     <SCounters>
-      <Search counters={counters} search={search} setSearch={handleSetSearch} />
+      <Search search={search} setSearch={handleSetSearch} />
 
       {isLoading && <Loading kind='absolute' />}
 
@@ -37,9 +43,9 @@ const Counters = () => {
 
       {!isLoading && !isError && counters.length && (
         <div style={{ paddingBottom: '4rem' }}>
-          <CountersSummary counters={counters} />
+          <CountersSummary counters={searchCounters} />
           <SCountersList>
-            <CountersList counters={counters} />
+            <CountersList counters={searchCounters} />
           </SCountersList>
         </div>
       )}
