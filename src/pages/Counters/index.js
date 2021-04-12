@@ -33,7 +33,11 @@ const Counters = () => {
 
   return (
     <SCounters>
-      <Search search={search} setSearch={handleSetSearch} />
+      <Search
+        search={search}
+        setSearch={handleSetSearch}
+        disabled={isLoading || isError || !counters.length}
+      />
 
       {isLoading && <Loading />}
 

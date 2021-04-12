@@ -17,6 +17,12 @@
   font-weight: 400;
 }
 
+.cs-input:disabled,
+.cs-input[disabled] {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
 .cs-input:focus {
   outline: 2px solid var(--app-tint);
   outline-style: auto;

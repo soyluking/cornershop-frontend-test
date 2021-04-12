@@ -12,8 +12,10 @@ export const SSearch = styled.div`
   }
 
   input {
-    border: var(--with-border);
+    border: 1px solid rgba(0, 0, 0, 0.02);
     box-shadow: var(--with-shadow);
+    font-size: 16px;
+    font-weight: 500;
     padding-left: 3rem;
   }
 
