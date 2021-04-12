@@ -4,7 +4,7 @@ import SearchIcon from '../Icons/SearchIcon';
 
 import { SSearch } from './styles';
 
-const Search = ({ search, setSearch, disabled }) => (
+const Search = ({ search, setSearch, setFocus, disabled }) => (
   <SSearch>
     <SearchIcon fill='var(--grey)' />
     <Input
@@ -13,6 +13,8 @@ const Search = ({ search, setSearch, disabled }) => (
       disabled={disabled}
       size='big'
       onChange={e => setSearch(e.target.value)}
+      onFocus={setFocus}
+      onBlur={setFocus}
     />
     {search && (
       <Button color='white' size='big' onClick={() => setSearch('')}>

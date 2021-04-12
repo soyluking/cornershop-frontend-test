@@ -3,9 +3,11 @@ import styled from 'styled-components';
 export const SSearch = styled.div`
   display: flex;
   position: relative;
+  z-index: 10;
 
   svg {
     left: 1rem;
+    pointer-events: none;
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
