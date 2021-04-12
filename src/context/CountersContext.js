@@ -5,16 +5,17 @@ const CountersContext = createContext({});
 export const CountersContextProvider = ({ children }) => {
   const [selected, setSelected] = useState([]);
 
-  const checkCounterBeforeAdd = counter => {
-    const selectedCounters = selected;
+  const concatSelected = ({ id, title = null, count = 0 }) => {
+    let selectedCounters = selected;
 
-    if (selectedCounters.some(item => item.id === counter.id))
-      return selectedCounters.filter(item => item.id !== counter.id);
+    if (selectedCounters.some(item => item.id === id)) {
+      selectedCounters = selectedCounters.filter(item => item.id !== id);
+    } else {
+      selectedCounters = selected.concat([{ id, title, count }]);
+    }
 
-    return selectedCounters.concat(counter);
+    setSelected(selectedCounters);
   };
-
-  const concatSelected = counter => setSelected(checkCounterBeforeAdd(counter));
 
   return (
     <CountersContext.Provider value={{ selected, concatSelected }}>
