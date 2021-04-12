@@ -24,3 +24,13 @@ export const deleteCounter = async id => {
   const response = await instance.delete('', data);
   return response.data;
 };
+
+export const incrementCounter = async id => {
+  const response = await instance.post('/inc', { id });
+  return response.data;
+};
+
+export const decrementCounter = async id => {
+  const response = await instance.post('/dec', { id });
+  return response.data;
+};
