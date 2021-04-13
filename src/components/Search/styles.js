@@ -2,7 +2,10 @@ import styled from 'styled-components';
 
 export const SSearch = styled.div`
   display: flex;
+  margin: 0 auto;
+  max-width: 25rem;
   position: relative;
+  width: 100%;
   z-index: 10;
 
   svg {

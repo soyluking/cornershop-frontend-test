@@ -43,6 +43,8 @@
 }
 
 .cs-modal__body {
+  height: 87%;
+  overflow: auto;
   padding: 1.2rem 1rem;
 }
 

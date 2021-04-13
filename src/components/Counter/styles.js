@@ -2,6 +2,7 @@ import styled from 'styled-components';
 
 export const SCounter = styled.div`
   align-items: center;
+  cursor: pointer;
   display: flex;
   justify-content: space-between;
   padding: 1.1rem 1.5rem;

@@ -18,6 +18,13 @@ export const SCountersCover = styled.div`
   z-index: 5;
 `;
 
+export const SCountersContent = styled.div`
+  margin: 1rem auto 0;
+  max-width: 40rem;
+  padding-bottom: 4rem;
+  width: 100%;
+`;
+
 export const SCountersList = styled.div`
   margin: 0 -1rem;
 `;

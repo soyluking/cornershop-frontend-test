@@ -82,6 +82,7 @@ select {
 }
 
 .helper-text a {
+  cursor: pointer;
   text-decoration: underline;
 }
 

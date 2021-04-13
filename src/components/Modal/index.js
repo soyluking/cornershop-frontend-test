@@ -39,7 +39,7 @@ const Modal = ({
   const modalContentRef = useRef();
 
   const handleEntered = () => {
-    modalContentRef.current.focus();
+    // modalContentRef.current.focus();
 
     typeof onOpen === 'function' && onOpen();
   };

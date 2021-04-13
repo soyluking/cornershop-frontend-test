@@ -5,7 +5,7 @@ import CountersContext from '../../context/CountersContext';
 
 import { incrementCounter, decrementCounter } from '../../services/counters';
 
-import Alert, { useAlert } from '../Alert';
+import Alert from '../Alert';
 import Button from './../Button';
 import IncrementIcon from '../Icons/IncrementIcon';
 import DecrementIcon from '../Icons/DecrementIcon';
@@ -19,8 +19,6 @@ import {
 
 const Counter = memo(({ id, title, count }) => {
   const { selected, concatSelected } = useContext(CountersContext);
-
-  const { hideAlert } = useAlert();
 
   const counterIsSelected = () =>
     selected.filter(counter => counter.id === id).length ? 'selected' : '';
@@ -52,14 +50,20 @@ const Counter = memo(({ id, title, count }) => {
     : count - 1;
 
   return (
-    <SCounter id={`counter-${id}`} className={counterIsSelected()}>
-      <SCounterTitle onClick={handleSetSelected}>{title}</SCounterTitle>
+    <SCounter
+      id={`counter-${id}`}
+      className={counterIsSelected()}
+      onClick={handleSetSelected}>
+      <SCounterTitle>{title}</SCounterTitle>
 
       <SCounterActions>
         <Button
           kind='icon'
           disabled={count < 1}
-          onClick={() => decrementCounterMutation.mutate(id)}>
+          onClick={e => {
+            e.stopPropagation();
+            decrementCounterMutation.mutate(id);
+          }}>
           <DecrementIcon
             fill={count < 1 ? 'var(--silver)' : 'var(--app-tint)'}
           />
@@ -67,7 +71,12 @@ const Counter = memo(({ id, title, count }) => {
 
         <SCounterLabel disabled={count < 1}>{count}</SCounterLabel>
 
-        <Button kind='icon' onClick={() => incrementCounterMutation.mutate(id)}>
+        <Button
+          kind='icon'
+          onClick={e => {
+            e.stopPropagation();
+            incrementCounterMutation.mutate(id);
+          }}>
           <IncrementIcon fill='var(--app-tint)' />
         </Button>
       </SCounterActions>

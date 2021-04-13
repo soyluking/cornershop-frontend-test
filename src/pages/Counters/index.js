@@ -11,8 +11,12 @@ import CountersSummary from '../../components/CountersSummary';
 import EmptyMessage from '../../components/EmptyMessage';
 import ErrorMessage from '../../components/ErrorMessage';
 
-import { SCounters, SCountersCover, SCountersList } from './styles';
-import Alert from '../../components/Alert';
+import {
+  SCounters,
+  SCountersContent,
+  SCountersCover,
+  SCountersList,
+} from './styles';
 
 const Counters = () => {
   const { data, isLoading, isError, refetch } = useQuery(
@@ -56,12 +60,12 @@ const Counters = () => {
       )}
 
       {!isLoading && !isError && searchCounters.length && (
-        <div style={{ paddingBottom: '4rem' }}>
+        <SCountersContent>
           <CountersSummary counters={searchCounters} />
           <SCountersList>
             <CountersList counters={searchCounters} />
           </SCountersList>
-        </div>
+        </SCountersContent>
       )}
 
       <Footer />

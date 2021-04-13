@@ -6,20 +6,22 @@ import CreateCounter from '../CreateCounter';
 import DeleteCounter from '../DeleteCounter';
 import ShareCounter from '../ShareCounter';
 
-import { SFooter } from './styles';
+import { SFooter, SFooterContainer } from './styles';
 
 const Footer = memo(() => {
   const { selected } = useContext(CountersContext);
 
   return (
     <SFooter>
-      {!!selected.length && (
-        <>
-          <DeleteCounter className='SFooter__delete' />
-          <ShareCounter className='SFooter__share' />
-        </>
-      )}
-      <CreateCounter className='SFooter__new' />
+      <SFooterContainer>
+        {!!selected.length && (
+          <>
+            <DeleteCounter className='SFooter__delete' />
+            <ShareCounter className='SFooter__share' />
+          </>
+        )}
+        <CreateCounter className='SFooter__new' />
+      </SFooterContainer>
     </SFooter>
   );
 });

@@ -4,10 +4,7 @@ export const SFooter = styled.footer`
   background-color: var(--white);
   box-shadow: 0 -30px 30px 30px var(--white);
   bottom: 0;
-  display: flex;
-  flex-wrap: wrap;
   left: 0;
-  padding: 0.9rem 1rem;
   position: fixed;
   right: 0;
   z-index: 1;
@@ -29,4 +26,14 @@ export const SFooter = styled.footer`
   .SFooter__new {
     margin-left: auto;
   }
+`;
+
+export const SFooterContainer = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 auto;
+  max-width: 40rem;
+  padding: 0.9rem 1rem;
+  position: relative;
+  width: 100%;
 `;
