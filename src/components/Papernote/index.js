@@ -20,7 +20,7 @@ const Papernote = ({ children }) => (
     <foreignObject
       x='26'
       y='6'
-      fontSize='9'
+      fontSize='8'
       fontWeight='600'
       width='63'
       height='80'
