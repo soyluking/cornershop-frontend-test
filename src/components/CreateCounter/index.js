@@ -76,10 +76,7 @@ const CreateCounter = ({ className }) => {
         {createCounterMutation.isLoading && <Loading />}
 
         {createCounterMutation.isError && (
-          <Alert
-            isVisible={true}
-            onClose={() => console.log('Alert was closed')}
-            onOpen={() => console.log('Alert was opened')}>
+          <Alert isVisible={true}>
             <Alert.Title>Couldn’t create counter</Alert.Title>
             <Alert.Message>
               The Internet connection appears to be offline.

@@ -5,6 +5,7 @@ import CountersContext from '../../context/CountersContext';
 
 import { incrementCounter, decrementCounter } from '../../services/counters';
 
+import Alert, { useAlert } from '../Alert';
 import Button from './../Button';
 import IncrementIcon from '../Icons/IncrementIcon';
 import DecrementIcon from '../Icons/DecrementIcon';
@@ -18,6 +19,8 @@ import {
 
 const Counter = memo(({ id, title, count }) => {
   const { selected, concatSelected } = useContext(CountersContext);
+
+  const { hideAlert } = useAlert();
 
   const counterIsSelected = () =>
     selected.filter(counter => counter.id === id).length ? 'selected' : '';
@@ -39,6 +42,15 @@ const Counter = memo(({ id, title, count }) => {
     counterMutation,
   );
 
+  const resetMutations = () => {
+    incrementCounterMutation.reset();
+    decrementCounterMutation.reset();
+  };
+
+  const expectedCount = incrementCounterMutation.isError
+    ? count + 1
+    : count - 1;
+
   return (
     <SCounter id={`counter-${id}`} className={counterIsSelected()}>
       <SCounterTitle onClick={handleSetSelected}>{title}</SCounterTitle>
@@ -59,6 +71,32 @@ const Counter = memo(({ id, title, count }) => {
           <IncrementIcon fill='var(--app-tint)' />
         </Button>
       </SCounterActions>
+
+      {(incrementCounterMutation.isError ||
+        decrementCounterMutation.isError) && (
+        <Alert isVisible={true}>
+          <Alert.Title>
+            Couldn’t update “{title}” to {expectedCount}
+          </Alert.Title>
+          <Alert.Message>
+            The Internet connection appears to be offline.
+          </Alert.Message>
+          <Alert.Actions>
+            <Button
+              kind='raised'
+              onClick={() =>
+                incrementCounterMutation.isError
+                  ? incrementCounterMutation.mutate(id)
+                  : decrementCounterMutation.mutate(id)
+              }>
+              Retry
+            </Button>
+            <Button kind='raised' color='warning' onClick={resetMutations}>
+              Dismiss
+            </Button>
+          </Alert.Actions>
+        </Alert>
+      )}
     </SCounter>
   );
 });
