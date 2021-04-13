@@ -17,8 +17,11 @@ export const CountersContextProvider = ({ children }) => {
     setSelected(selectedCounters);
   };
 
+  const emptySelected = () => setSelected([]);
+
   return (
-    <CountersContext.Provider value={{ selected, concatSelected }}>
+    <CountersContext.Provider
+      value={{ selected, concatSelected, emptySelected }}>
       {children}
     </CountersContext.Provider>
   );

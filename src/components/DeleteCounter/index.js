@@ -11,15 +11,15 @@ import Loading from '../Loading';
 import TrashBinIcon from '../Icons/TrashBinIcon';
 
 const DeleteCounter = ({ className }) => {
-  const { selected, concatSelected } = useContext(CountersContext);
+  const { selected, emptySelected } = useContext(CountersContext);
 
   const { isVisible: isAlertVisible, hideAlert, showAlert } = useAlert();
 
   const queryClient = useQueryClient();
 
   const deleteCountersMutation = useMutation(deleteCounter, {
-    onSuccess: data => {
-      concatSelected({ id: data });
+    onSuccess: () => {
+      emptySelected();
       queryClient.invalidateQueries('counters');
     },
   });
