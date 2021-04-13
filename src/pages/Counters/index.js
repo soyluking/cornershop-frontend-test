@@ -14,7 +14,10 @@ import ErrorMessage from '../../components/ErrorMessage';
 import { SCounters, SCountersCover, SCountersList } from './styles';
 
 const Counters = () => {
-  const { data, isLoading, isError } = useQuery('counters', getCounters);
+  const { data, isLoading, isError, refetch } = useQuery(
+    'counters',
+    getCounters,
+  );
 
   const [counters, setCounters] = useState([]);
   const [search, setSearch] = useState('');
@@ -45,7 +48,7 @@ const Counters = () => {
 
       {isLoading && <Loading />}
 
-      {!isLoading && isError && <ErrorMessage />}
+      {!isLoading && isError && <ErrorMessage retryQuery={() => refetch()} />}
 
       {!isLoading && !isError && !searchCounters.length && (
         <EmptyMessage isSearching={search} />
