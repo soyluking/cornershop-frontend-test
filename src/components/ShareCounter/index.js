@@ -1,8 +1,8 @@
-import { useState, useContext } from 'react';
+import { useState, useEffect, useContext } from 'react';
 
 import CountersContext from '../../context/CountersContext';
 
-import Button from '../Button';
+import CopyButton from '../CopyButton';
 import OpenIcon from '../Icons/OpenIcon';
 import Papernote from '../Papernote';
 
@@ -14,8 +14,16 @@ const ShareTooltip = ({ children }) => {
 
 const ShareCounter = ({ className }) => {
   const [showTooltip, setShowTooltip] = useState(false);
+  const [textToCopy, setTextToCopy] = useState('');
 
   const { selected } = useContext(CountersContext);
+
+  useEffect(() => {
+    const text = selected
+      .map(counter => `${counter.count} x ${counter.title}`)
+      .join(' / ');
+    setTextToCopy(text);
+  }, [selected]);
 
   return (
     <>
@@ -36,9 +44,7 @@ const ShareCounter = ({ className }) => {
                 ? '1 counter'
                 : `${selected.length} counters`}
             </SShareTitle>
-            <Button color='warning' kind='raised'>
-              Copy
-            </Button>
+            <CopyButton color='warning' kind='raised' textToCopy={textToCopy} />
           </div>
           <div>
             <Papernote>
