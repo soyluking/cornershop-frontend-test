@@ -81,6 +81,10 @@ select {
   font-size: 0.9rem;
 }
 
+.helper-text a {
+  text-decoration: underline;
+}
+
 /* Transition */
 .cs-fade-transition {
   transition: opacity 195ms ease-in-out;

@@ -3,6 +3,7 @@ import { useMutation, useQueryClient } from 'react-query';
 
 import { createCounter } from '../../services/counters';
 
+import CounterExamples from '../CounterExamples';
 import Alert from '../Alert';
 import Button from '../Button';
 import Input from '../Input';
@@ -31,6 +32,10 @@ const CreateCounter = ({ className }) => {
   const handleCreateCounter = e => {
     e.preventDefault();
     createCounterMutation.mutate(title);
+  };
+
+  const handleSetExample = value => {
+    setTitle(value);
   };
 
   return (
@@ -67,9 +72,7 @@ const CreateCounter = ({ className }) => {
               onChange={e => setTitle(e.target.value)}
             />
 
-            <p className='helper-text'>
-              Give it a name. Creative block? See <a href=''>examples</a>.
-            </p>
+            <CounterExamples setExample={handleSetExample} />
           </Modal.Body>
         </form>
 

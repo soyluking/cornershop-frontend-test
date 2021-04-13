@@ -33,25 +33,21 @@
   border-bottom: var(--with-border);
   border-width: 3px;
   display: flex;
-  justify-content: space-between;
-  padding: 15px;
+  padding: 0.8rem 1rem;
 }
+
 .cs-modal__header .close {
   border-radius: 50%;
   height: auto;
   padding: 6px;
 }
+
 .cs-modal__body {
-  padding: 20px;
-}
-.cs-modal__header,
-.cs-modal__body {
-  padding-right: 12px;
-  padding-left: 18px;
+  padding: 1.2rem 1rem;
 }
 
 .cs-modal__title {
-  margin: 0;
+  margin: 0 auto 0 1rem;
   font-size: 22px;
   font-weight: 600;
 }
