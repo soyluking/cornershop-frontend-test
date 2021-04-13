@@ -21,7 +21,7 @@ const ShareCounter = ({ className }) => {
   useEffect(() => {
     const text = selected
       .map(counter => `${counter.count} x ${counter.title}`)
-      .join(' / ');
+      .join('\r\n');
     setTextToCopy(text);
   }, [selected]);
 
