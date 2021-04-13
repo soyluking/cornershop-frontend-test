@@ -25,7 +25,7 @@ const Counters = () => {
   const [searchFocus, setSearchFocus] = useState(false);
 
   useEffect(() => {
-    if (!isLoading) setCounters(data);
+    if (!isLoading) setCounters(data || []);
   }, [isLoading, data]);
 
   const handleSetSearch = value => setSearch(value);

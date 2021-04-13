@@ -13,7 +13,7 @@ import {
   SSummaryButton,
 } from './styles';
 
-const CountersSummary = ({ counters }) => {
+const CountersSummary = ({ counters = [] }) => {
   const [refresh, setRefresh] = useState(false);
 
   const { selected } = useContext(CountersContext);

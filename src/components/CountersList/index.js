@@ -1,6 +1,6 @@
 import Counter from '../Counter';
 
-const CountersList = ({ counters }) => (
+const CountersList = ({ counters = [] }) => (
   <>
     {counters.map(counter => (
       <Counter
