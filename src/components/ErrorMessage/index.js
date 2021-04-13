@@ -3,13 +3,13 @@ import Button from '../../components/Button';
 
 import { SErrorMessage } from './styles';
 
-const ErrorMessage = ({ retryQuery }) => (
+const ErrorMessage = ({ refetchQuery }) => (
   <SErrorMessage>
     <Heading
       title='Couldn’t load the counters'
       text='The Internet connection appears to be offline.'
     />
-    <Button color='warning' kind='raised' onClick={retryQuery}>
+    <Button color='warning' kind='raised' onClick={refetchQuery}>
       Retry
     </Button>
   </SErrorMessage>

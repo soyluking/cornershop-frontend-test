@@ -12,6 +12,7 @@ import EmptyMessage from '../../components/EmptyMessage';
 import ErrorMessage from '../../components/ErrorMessage';
 
 import { SCounters, SCountersCover, SCountersList } from './styles';
+import Alert from '../../components/Alert';
 
 const Counters = () => {
   const { data, isLoading, isError, refetch } = useQuery(
@@ -48,7 +49,7 @@ const Counters = () => {
 
       {isLoading && <Loading />}
 
-      {!isLoading && isError && <ErrorMessage retryQuery={() => refetch()} />}
+      {!isLoading && isError && <ErrorMessage refetchQuery={() => refetch()} />}
 
       {!isLoading && !isError && !searchCounters.length && (
         <EmptyMessage isSearching={search} />
