@@ -72,7 +72,7 @@
 .cs-button--raised.cs-button--white {
   color: var(--app-tint);
 }
-.cs-button--text {
+.cs-button--icon {
   background-color: transparent;
   border-color: transparent;
   box-shadow: none;
@@ -80,10 +80,18 @@
   height: auto;
   padding: 5px;
 }
-.cs-button--text:disabled,
-.cs-button--text[disabled] {
+.cs-button--icon:disabled,
+.cs-button--icon[disabled] {
   color: var(--silver);
   opacity: 1;
+}
+.cs-button--example {
+  background-color: #ececec;
+  border: 1px solid var(--silver);
+  border-radius: 100px;
+  box-shadow: 0 2px 8px 0 var(--alpha-01);
+  color: var(--dark-black);
+  font-weight: 500;
 }
 
 /* Color */

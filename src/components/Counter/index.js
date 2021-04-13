@@ -57,7 +57,7 @@ const Counter = memo(({ id, title, count }) => {
 
       <SCounterActions>
         <Button
-          kind='text'
+          kind='icon'
           disabled={count < 1}
           onClick={() => decrementCounterMutation.mutate(id)}>
           <DecrementIcon
@@ -67,7 +67,7 @@ const Counter = memo(({ id, title, count }) => {
 
         <SCounterLabel disabled={count < 1}>{count}</SCounterLabel>
 
-        <Button kind='text' onClick={() => incrementCounterMutation.mutate(id)}>
+        <Button kind='icon' onClick={() => incrementCounterMutation.mutate(id)}>
           <IncrementIcon fill='var(--app-tint)' />
         </Button>
       </SCounterActions>

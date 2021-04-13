@@ -11,7 +11,8 @@ const ButtonKindVariant = {
   Regular: 'regular',
   Flat: 'flat',
   Raised: 'raised',
-  Text: 'text',
+  Icon: 'icon',
+  Example: 'example',
 };
 const ButtonColorVariant = {
   Regular: 'regular',
@@ -29,7 +30,8 @@ const ButtonKindClasses = {
   [ButtonKindVariant.Regular]: '',
   [ButtonKindVariant.Flat]: 'cs-button--flat',
   [ButtonKindVariant.Raised]: 'cs-button--raised',
-  [ButtonKindVariant.Text]: 'cs-button--text',
+  [ButtonKindVariant.Icon]: 'cs-button--icon',
+  [ButtonKindVariant.Example]: 'cs-button--example',
 };
 const ButtonColorClasses = {
   [ButtonColorVariant.Regular]: '',
