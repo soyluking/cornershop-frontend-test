@@ -26,16 +26,17 @@ export const SSummaryButton = styled.button`
   display: inline-flex;
   padding: 0;
 
-  &.active {
-    color: var(--app-tint);
+  &:focus {
+    outline: none;
+  }
 
-    span {
-      opacity: 1;
-    }
+  &.refreshing {
+    color: var(--app-tint);
   }
 
   span {
-    margin-left: 0.5rem;
-    opacity: 0;
+    display: block;
+    font-weight: 500;
+    margin-left: 0.3rem;
   }
 `;

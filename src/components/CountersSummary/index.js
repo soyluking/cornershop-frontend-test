@@ -1,4 +1,5 @@
-import { useContext } from 'react';
+import { useContext, useState } from 'react';
+import { useQueryClient } from 'react-query';
 
 import CountersContext from '../../context/CountersContext';
 import useCountTimes from '../../hooks/useCountTimes';
@@ -13,8 +14,17 @@ import {
 } from './styles';
 
 const CountersSummary = ({ counters }) => {
+  const [refresh, setRefresh] = useState(false);
+
   const { selected } = useContext(CountersContext);
   const { timesLabel, itemsLabel } = useCountTimes({ counters });
+  const queryClient = useQueryClient();
+
+  const refreshCounters = async () => {
+    setRefresh(true);
+    await queryClient.refetchQueries('counters');
+    setRefresh(false);
+  };
 
   return (
     <SSummary>
@@ -27,9 +37,11 @@ const CountersSummary = ({ counters }) => {
         </>
       )}
 
-      <SSummaryButton>
-        <RefreshIcon fill='var(--black)' />
-        <span>Refreshing...</span>
+      <SSummaryButton
+        className={refresh ? 'refreshing' : ''}
+        onClick={() => refreshCounters()}>
+        <RefreshIcon fill={refresh ? 'var(--app-tint)' : 'var(--black)'} />
+        {refresh && <span>Refreshing...</span>}
       </SSummaryButton>
     </SSummary>
   );
