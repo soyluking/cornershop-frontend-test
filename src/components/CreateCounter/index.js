@@ -58,7 +58,7 @@ const CreateCounter = ({ className }) => {
               <CloseIcon fill='var(--white)' />
             </Button>
             <Modal.Title>Create Counter</Modal.Title>
-            <Button kind='raised' disabled={!title} type='submit'>
+            <Button kind='raised' disabled={!/\S/.test(title)} type='submit'>
               Save
             </Button>
           </Modal.Header>
@@ -66,7 +66,7 @@ const CreateCounter = ({ className }) => {
             <Input
               label='Name'
               value={title}
-              placeholder='Days doing excersices'
+              placeholder='Counters created with this application'
               autoComplete='off'
               ref={titleInput}
               onChange={e => setTitle(e.target.value)}
