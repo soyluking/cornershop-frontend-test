@@ -20,6 +20,8 @@ Además, aproveche la oportunidad de probar y aprender sobre algunas herramienta
 
 **2. Styled Components:** me pareció la forma perfecta de organizar los estilos de la aplicación, utilizando las ventajas de JS dentro de CSS.
 
+**3. React Testing Library:** Para realizar los tests de la aplicación. En realidad no había realizado tests antes, solo ejemplos, así que aprendí mucho con esto 💪🏽
+
 ## Conclusión 🏆
 
 Le puse mucha energía a esta prueba y considero que logre un buen resultado. Como pidieron, mi intención fue en todo momento entregar una aplicación lista para producción por lo que la probe mucho y en varios dispositivos. Espero que sea de su agrado.

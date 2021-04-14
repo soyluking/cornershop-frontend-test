@@ -6,7 +6,8 @@
   "scripts": {
     "start": "run-p start:*",
     "start:cra": "react-scripts start",
-    "start:server": "node server/index.js"
+    "start:server": "node server/index.js",
+    "test": "react-scripts test"
   },
   "author": "Cornershop",
   "license": "ISC",
@@ -19,8 +20,8 @@
     "lodash": "^4.17.20",
     "morgan": "^1.10.0",
     "normalize.css": "^8.0.1",
-    "react": "^17.0.1",
-    "react-dom": "^17.0.1",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
     "react-query": "^3.13.5",
     "react-scripts": "^4.0.2",
     "react-transition-group": "^4.4.1",
@@ -45,6 +46,12 @@
     "styled-components": "^5"
   },
   "devDependencies": {
-    "npm-run-all": "^4.1.5"
+    "@testing-library/jest-dom": "^5.11.10",
+    "@testing-library/react": "^11.2.6",
+    "@testing-library/react-hooks": "^5.1.1",
+    "@testing-library/user-event": "^13.1.2",
+    "msw": "^0.28.1",
+    "npm-run-all": "^4.1.5",
+    "react-test-renderer": "^17.0.2"
   }
 }
