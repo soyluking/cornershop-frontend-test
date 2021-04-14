@@ -21,7 +21,7 @@ Además, aproveche la oportunidad de probar y aprender sobre algunas herramienta
 
 Con respecto al testing, aprendí mucho, aprendí que sería mejor trabajar con testing desde el inicio, sino me equivoco se llama Test-driven development (TDD), ya que me permitiría ir testeando que todo funcione bien a medida que avanzo. También aprendí varios conceptos interesantes y los temas técnicos usando la librería React Testing Library.
 
-En esta prueba no los incluyo, pero deje otra branch feature/implement-testing, donde seguiré trabajando con esto, porque entendí su importancia para el desarrollo y que es un conocimiento que quiero tener.
+En esta prueba no los incluyo, pero deje otra branch `feature/implement-testing`, donde seguiré trabajando con esto, porque entendí su importancia para el desarrollo y que es un conocimiento que quiero tener.
 
 ## Conclusión 🏆
 
