@@ -14,8 +14,6 @@ Para el manejo del estado global, considerando que solo necesitaba saber cuales 
 
 Quise reutilizar todos los componentes de interfaz que venían en el boilerplate. En parte para optimizar tiempos y en otra para adoptar posibles buenas prácticas que usan en **Cornershop**. Solo tuve que aplicar algunos cambios visuales y funcionales para que se adaptaran a todas las funcionalidades que necesitaba.
 
-Aproveche además la oportunidad de la prueba para aprender a trabajar con un par de herramientas que había escuchado y me parecían interesantes de probar para esta aplicación:
-
 Además, aproveche la oportunidad de probar y aprender sobre algunas herramientas:
 
 **1. React Query:** para obtener, actualizar y eliminar los datos de la aplicación. Me pareció muy interesante porque además usa Hooks y el manejo de los estados de carga y error es muy sencillo.
