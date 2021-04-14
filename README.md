@@ -1,28 +1,31 @@
 # ¡Hola Equipo Cornershop 🥑!
 
-Gracias por la oportunidad de presentar esta prueba, que encontre muy entretenida y desafiante.
+Gracias por la oportunidad de presentar esta prueba, la encontré muy entretenida y desafiante. Les comparto un resumen de cómo la aborde.
 
-Una vez recibidas las indicaciones, mi objetivo era terminar la mayoría de funcionalidades durante el fin de semana ya que quería tener el tiempo necesario para poder ir revisando y mejorando la entrega en los días siguientes. Empece revisando el Figma para entender los flujos, componentes y lógica a desarrollar.
+Una vez recibidas las indicaciones, mi objetivo era terminar la mayoría de funcionalidades listas durante el fin de semana, de esa forma podía tener el tiempo necesario para revisar y validar la entrega en los siguientes días. Empecé revisando el Figma para entender los flujos y funcionalidades para decidir cómo trabajar.
 
-Al momento de empezar a trabajar con el código, considere que era mejor desarrollar los componentes principales y luego ir incorporando la lógica de las funcionalidades. En este punto, levante un **Trello** que me permitió organizarme con las tareas pendientes que iba detectando.
+Consideré que era mejor desarrollar los componentes principales y luego ir incorporando las funcionalidades. En este punto, levanté un Trello que me permitió organizar las tareas que iba detectando.
+Instale las librerías y dependencias que usaría, aunque con la intención de que fueran solo las realmente necesarias.
+Para las rutas, opte por **`Wouter`**, un routing muy liviano. Principalmente porque solo tenía 2 vistas que no tenían ninguna lógica de rutas entre ellas.
 
-Defini que librerías que usaría, aunque con la intención de que sean las menores posibles.
+Para el estado global, personalmente pienso que mientras menos mejor :), vi que la única información que tenía que compartir en distintos componentes eran los contadores seleccionados, por lo que opté por usar **`Context`**, de esa forma no usaba una librería adicional.
 
-Para las rutas, opte por **`Wouter`**, una opción muy liviana para hacer routing, considerando que eran solo 2 vistas y no tenían ninguna lógica compleja.
-
-Para el manejo del estado global, considerando que solo necesitaba saber cuales eran los contadores seleccionados para eliminarlos, compartirlos y mostrar el resumen, opte por usar **`Context`**, de esa forma no usaba una librería adicional.
-
-Quise reutilizar todos los componentes de interfaz que venían en el boilerplate. En parte para optimizar tiempos y en otra para adoptar posibles buenas prácticas que usan en **Cornershop**. Solo tuve que aplicar algunos cambios visuales y funcionales para que se adaptaran a todas las funcionalidades que necesitaba.
+Quise utilizar todos los componentes de interfaz que venían en el boilerplate. En parte para optimizar tiempos y en otra para adoptar posibles buenas prácticas que usen en **Cornershop**. Solo tuve que aplicar algunos cambios visuales y funcionales para que se adaptaran a todas las funcionalidades que necesitaba.
 
 Además, aproveche la oportunidad de probar y aprender sobre algunas herramientas:
 
-**1. React Query:** para obtener, actualizar y eliminar los datos de la aplicación. Me pareció muy interesante porque además usa Hooks y el manejo de los estados de carga y error es muy sencillo.
+1. React Query: para manejar los fetch a la api a través de axios. Me pareció muy interesante porque simplifica mucho el manejo de estados de carga o error, además de cachear los datos.
+2. Styled Components: me pareció la forma perfecta para organizar los estilos de la aplicación, utilizando las ventajas de JS dentro de CSS y especificando los estilos de cada componente sin preocuparme del choque de clases.
 
-**2. Styled Components:** me pareció la forma perfecta de organizar los estilos de la aplicación, utilizando las ventajas de JS dentro de CSS.
+## Testing
+
+Con respecto al testing, aprendí mucho, aprendí que sería mejor trabajar con testing desde el inicio, sino me equivoco se llama Test-driven development (TDD), ya que me permitiría ir testeando que todo funcione bien a medida que avanzo. También aprendí varios conceptos interesantes y los temas técnicos usando la librería React Testing Library.
+
+En esta prueba no los incluyo, pero deje otra branch feature/implement-testing, donde seguiré trabajando con esto, porque entendí su importancia para el desarrollo y que es un conocimiento que quiero tener.
 
 ## Conclusión 🏆
 
-Le puse mucha energía a esta prueba y considero que logre un buen resultado. Como pidieron, mi intención fue en todo momento entregar una aplicación lista para producción por lo que la probe mucho y en varios dispositivos. Espero que sea de su agrado.
+Le puse mucha energía a esta prueba y considero que logre un buen resultado. Al igual que con mi trabajo diario, mi intención fue en todo momento entregar una aplicación lista para producción, así que probé y probé mucho y en distintos dispositivos para asegurar que funciona y se viera bien bien. Espero sea de su agrado.
 
 ---
 
