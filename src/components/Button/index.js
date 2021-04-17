@@ -61,9 +61,9 @@ const Button = ({
   if (href)
     return (
       <Link href={href}>
-        <button className={classes} {...rest}>
+        <a className={classes} {...rest}>
           <span>{children}</span>
-        </button>
+        </a>
       </Link>
     );
 
