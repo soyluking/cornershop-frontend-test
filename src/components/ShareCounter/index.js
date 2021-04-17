@@ -1,6 +1,7 @@
 import { useState, useEffect, useContext } from 'react';
 
 import CountersContext from '../../context/CountersContext';
+import useComponentVisible from '../../hooks/useComponentVisible';
 
 import CopyButton from '../CopyButton';
 import OpenIcon from '../Icons/OpenIcon';
@@ -13,8 +14,12 @@ const ShareTooltip = ({ children }) => {
 };
 
 const ShareCounter = ({ className }) => {
-  const [showTooltip, setShowTooltip] = useState(false);
   const [textToCopy, setTextToCopy] = useState('');
+  const {
+    ref,
+    isComponentVisible,
+    setIsComponentVisible,
+  } = useComponentVisible(false);
 
   const { selected } = useContext(CountersContext);
 
@@ -26,16 +31,16 @@ const ShareCounter = ({ className }) => {
   }, [selected]);
 
   return (
-    <>
+    <div ref={ref}>
       <SButton
         className={className}
         color='white'
         kind='raised'
-        onClick={() => setShowTooltip(!showTooltip)}>
+        onClick={() => setIsComponentVisible(!isComponentVisible)}>
         <OpenIcon />
       </SButton>
 
-      {showTooltip && (
+      {isComponentVisible && (
         <ShareTooltip>
           <div>
             <SShareTitle>
@@ -57,7 +62,7 @@ const ShareCounter = ({ className }) => {
           </div>
         </ShareTooltip>
       )}
-    </>
+    </div>
   );
 };
 
