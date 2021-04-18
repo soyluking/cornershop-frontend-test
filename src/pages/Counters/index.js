@@ -55,7 +55,7 @@ const Counters = () => {
         <EmptyMessage isSearching={search} />
       )}
 
-      {!isLoading && !isError && searchCounters.length && (
+      {!isLoading && !isError && !!searchCounters.length && (
         <SCountersContent>
           <CountersSummary counters={searchCounters} />
           <SCountersList>
