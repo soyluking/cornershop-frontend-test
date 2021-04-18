@@ -14,11 +14,7 @@ const mockCounters = [
   },
 ];
 
-const fetchMockCounters = () =>
-  instance.get.mockResolvedValue({ data: mockCounters });
-
-const fetchMockEmptyCounters = () =>
-  instance.get.mockResolvedValue({ data: [] });
+const fetchMockCounters = data => instance.get.mockResolvedValue({ data });
 
 describe('Counters', () => {
   beforeEach(() => jest.restoreAllMocks());
@@ -32,61 +28,39 @@ describe('Counters', () => {
     expect(inputSearch).toBeDisabled();
   });
 
-  // test('should display error message when an error occurs while fetching counters', async () => {
-  //   // fetchMockError();
-
-  //   renderWithReactQueryContextAndRouter(<Counters />);
-
-  //   // expect.assertions(1);
-
-  //   instance.get.mockRejectedValue(new Error('Some network error'));
-  //   let error;
-
-  //   try {
-  //     await fetchMockError();
-  //   } catch (e) {
-  //     error = e;
-  //   }
-
-  //   expect(instance.get).toHaveBeenCalledTimes(1);
-  //   expect(error).toEqual('Some network error');
-
-  //   // instance.get.mockRejectedValue(new Error('network error'));
-  //   // instance.get.mockRejectedValue(new Error('network error'));
-
-  //   // const element = await waitFor(() => screen.getByText('loading-spinne'));
-
-  //   // expect(instance.get).toHaveBeenCalledTimes(1);
-  //   // expect(screen.getByText('loading-spinne')).toBeInTheDocument();
-  // });
-
-  test('should display loading indicator while waiting for counters to load', async () => {
-    fetchMockCounters();
+  test('should display loading indicator while waiting for counters to load', () => {
+    fetchMockCounters(mockCounters);
 
     renderWithReactQueryContextAndRouter(<Counters />);
 
-    await waitFor(() => {
-      expect(screen.getByTestId('loading-spinner')).toBeInTheDocument();
-    });
+    const loading = screen.getByTestId('loading-spinner');
+    expect(loading).toBeInTheDocument();
   });
 
   test('should display empty message when no counters load', async () => {
-    fetchMockEmptyCounters();
+    fetchMockCounters([]);
 
     renderWithReactQueryContextAndRouter(<Counters />);
 
-    await waitFor(() => {
-      expect(screen.getByText('No counters yet')).toBeInTheDocument();
-    });
+    const emptyTitle = await screen.findByText('No counters yet');
+    expect(emptyTitle).toBeInTheDocument();
   });
 
   test('should display counters list when fetching is done', async () => {
-    fetchMockCounters();
+    fetchMockCounters(mockCounters);
 
     renderWithReactQueryContextAndRouter(<Counters />);
 
-    await waitFor(() => {
-      expect(screen.getByText(mockCounters[0].title)).toBeInTheDocument();
-    });
+    const counterTitle = await screen.findByText(mockCounters[0].title);
+    expect(counterTitle).toBeInTheDocument();
+  });
+
+  test('should display error message when an error occurs while fetching counters', async () => {
+    instance.get.mockRejectedValueOnce(new Error('Error fetching counters'));
+
+    renderWithReactQueryContextAndRouter(<Counters />);
+
+    const errorTitle = await screen.findByText('Couldn’t load the counters');
+    expect(errorTitle).toBeInTheDocument();
   });
 });
