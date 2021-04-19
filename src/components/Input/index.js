@@ -15,15 +15,25 @@ const InputSizeClasses = {
 
 const Input = forwardRef(
   (
-    { className = '', label = '', size = InputSizeVariant.Regular, ...rest },
+    {
+      className = '',
+      label = '',
+      id = '',
+      size = InputSizeVariant.Regular,
+      ...rest
+    },
     ref,
   ) => {
     const classes = classnames('cs-input', InputSizeClasses[size], className);
 
     return (
       <div className='cs-control'>
-        {label && <label className='cs-label'>{label}</label>}
-        <input className={classes} ref={ref} {...rest} />
+        {label && (
+          <label className='cs-label' htmlFor={id}>
+            {label}
+          </label>
+        )}
+        <input className={classes} id={id} ref={ref} {...rest} />
       </div>
     );
   },

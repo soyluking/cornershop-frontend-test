@@ -10,6 +10,27 @@ export function renderWithRouter(ui) {
   };
 }
 
+export function renderWithReactQuery(ui) {
+  const queryClient = new QueryClient({
+    defaultOptions: {
+      queries: {
+        retry: false,
+      },
+    },
+  });
+
+  return {
+    ...render(
+      <QueryClientProvider client={queryClient}>
+        {/* <CountersContextProvider> */}
+        {ui}
+        {/* </CountersContextProvider> */}
+      </QueryClientProvider>,
+    ),
+    history,
+  };
+}
+
 export function renderWithReactQueryContextAndRouter(ui) {
   const queryClient = new QueryClient({
     defaultOptions: {

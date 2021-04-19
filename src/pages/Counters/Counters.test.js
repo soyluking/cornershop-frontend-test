@@ -1,4 +1,5 @@
 import { screen } from '@testing-library/react';
+
 import { renderWithReactQueryContextAndRouter } from '../../utils/tests';
 import instance from '../../services/axios';
 
@@ -16,7 +17,7 @@ const mockCounters = [
 
 const fetchMockCounters = data => instance.get.mockResolvedValue({ data });
 
-describe('Counters', () => {
+describe('<Counters />', () => {
   beforeEach(() => jest.restoreAllMocks());
 
   test('should render Counters page correctly', () => {
