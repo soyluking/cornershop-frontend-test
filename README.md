@@ -14,15 +14,17 @@ Quise utilizar todos los componentes de interfaz que venían en el boilerplate. 
 
 Además, aproveche la oportunidad de probar y aprender sobre algunas herramientas:
 
-**1. React Query:** para manejar los fetch a la api a través de axios. Me pareció muy interesante porque simplifica mucho el manejo de estados de carga o error, además de cachear los datos.
-**2. Styled Components:** me pareció la forma perfecta para organizar los estilos de la aplicación, utilizando las ventajas de JS dentro de CSS y especificando los estilos de cada componente sin preocuparme del choque de clases.
-**3. React Testing Library:** para realizar los tests de la aplicación en conjunto con Jest, ver siguiente sección
+1. **React Query:** para manejar los fetch a la api a través de axios. Me pareció muy interesante porque simplifica mucho el manejo de estados de carga o error, además de cachear los datos.
+
+2. **Styled Components:** me pareció la forma perfecta para organizar los estilos de la aplicación, utilizando las ventajas de JS dentro de CSS y especificando los estilos de cada componente sin preocuparme del choque de clases.
+
+3. **React Testing Library:** para realizar los tests de la aplicación en conjunto con Jest, ver siguiente sección
 
 ## Testing
 
-El Testing merece una sección especial en este resumen, para mi fue lo más desafiante. Hasta el momento solo había realizado ejercicios con videos o tutoriales así que aprendí mucho y siento que aún me queda mucho más por aprender. Entendí que hubiera sido mejor crear los tests desde el principio, de esa forma hubiera ido comprobando que todo funcione bien a medida que avanzaba.
+El Testing merece una sección especial en este resumen, para mi, fue lo más desafiante. Hasta el momento solo había visto videos o pequeños ejercicios, así que aprendí mucho y siento que aún me queda mucho más por aprender.
 
-Fui aprendiendo los principales conceptos y cómo debía hacer los tests a medida que avanzaba, vi muchos videos, guías y threads de Github y Stackoverflow cada vez que me encontraba con un problema para solucionarlo. En esta prueba incluyo tests para algunos componentes que pienso siguen el comportamiento del usuario, tengo claro que me falta mucho más por aprender y lo haré, porque entendí la importancia de entregar un código 100% probado y que podamos entregar con confianza de que nada se rompa.
+A medida que avanzaba, fui aprendiendo los principales conceptos, qué debía testear y cómo. Me encontré con varios problemas que fue resolviendo viendo videos, siguiendo la documentación y leyendo threads de Github y StackOverflow. En esta prueba incluyo tests para algunos componentes que pienso siguen el comportamiento del usuario, aunque tengo claro que me falta mucho más por aprender y lo haré, porque entendí la importancia de entregar un código 100% probado y con la confianza de que nada se rompa.
 
 ## Conclusión 🏆
 
