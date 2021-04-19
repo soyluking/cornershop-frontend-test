@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react';
-import { useQuery } from 'react-query';
 
-import { getCounters } from '../../services/counters';
+import useFetchCounters from '../../hooks/useFetchCounters';
 
 import Loading from '../../components/Loading';
 import Search from '../../components/Search';
@@ -19,17 +18,14 @@ import {
 } from './styles';
 
 const Counters = () => {
-  const { data, isLoading, isError, refetch } = useQuery(
-    'counters',
-    getCounters,
-  );
+  const { data, isLoading, isError, refetch } = useFetchCounters();
 
   const [counters, setCounters] = useState([]);
   const [search, setSearch] = useState('');
   const [searchFocus, setSearchFocus] = useState(false);
 
   useEffect(() => {
-    if (!isLoading) setCounters(data || []);
+    if (!isLoading) setCounters(data);
   }, [isLoading, data]);
 
   const handleSetSearch = value => setSearch(value);
@@ -59,7 +55,7 @@ const Counters = () => {
         <EmptyMessage isSearching={search} />
       )}
 
-      {!isLoading && !isError && searchCounters.length && (
+      {!isLoading && !isError && !!searchCounters.length && (
         <SCountersContent>
           <CountersSummary counters={searchCounters} />
           <SCountersList>

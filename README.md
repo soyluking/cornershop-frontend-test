@@ -23,6 +23,8 @@ Con respecto al testing, aprendí mucho, aprendí que sería mejor trabajar con 
 
 En esta prueba no los incluyo, pero deje otra branch `feature/implement-testing`, donde seguiré trabajando con esto, porque entendí su importancia para el desarrollo y que es un conocimiento que quiero tener.
 
+**3. React Testing Library:** Para realizar los tests de la aplicación. En realidad no había realizado tests antes, solo ejemplos, así que aprendí mucho con esto 💪🏽
+
 ## Conclusión 🏆
 
 Le puse mucha energía a esta prueba y considero que logre un buen resultado. Al igual que con mi trabajo diario, mi intención fue en todo momento entregar una aplicación lista para producción, así que probé y probé mucho y en distintos dispositivos para asegurar que funciona y se viera bien bien. Espero sea de su agrado.

@@ -1,3 +1,10 @@
 import axios from 'axios';
 
-export const createInstance = config => axios.create(config);
+const instance = axios.create({
+  baseURL: '/api/v1/counter',
+  headers: {
+    'Content-Type': 'application/json',
+  },
+});
+
+export default instance;

@@ -16,7 +16,7 @@ const Loading = ({ kind = LoadingKindVariant.Absolute }) => {
   const classes = classnames('cs-loading-spinner', LoadingKindClasses[kind]);
 
   return (
-    <div className={classes}>
+    <div className={classes} data-testid='loading-spinner'>
       <div className='cs-loading-spinner__bouncer'></div>
       <div className='cs-loading-spinner__bouncer'></div>
       <div className='cs-loading-spinner__bouncer'></div>

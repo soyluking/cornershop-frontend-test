@@ -40,7 +40,10 @@ const CreateCounter = ({ className }) => {
 
   return (
     <>
-      <Button className={className} onClick={showModal}>
+      <Button
+        className={className}
+        onClick={showModal}
+        data-testid='add-counter'>
         <NewIcon fill='var(--white)' />
       </Button>
 
@@ -65,6 +68,7 @@ const CreateCounter = ({ className }) => {
           <Modal.Body>
             <Input
               label='Name'
+              id='createInput'
               value={title}
               placeholder='Counters created with this application'
               autoComplete='off'

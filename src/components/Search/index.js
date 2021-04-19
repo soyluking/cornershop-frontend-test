@@ -7,7 +7,11 @@ import { SSearch } from './styles';
 const Search = ({ search, setSearch, setFocus, disabled }) => (
   <SSearch>
     <SearchIcon fill='var(--grey)' />
+    <label htmlFor='search-input' className='sr-only'>
+      Search Counters
+    </label>
     <Input
+      id='search-input'
       value={search}
       placeholder='Search Counters'
       disabled={disabled}
