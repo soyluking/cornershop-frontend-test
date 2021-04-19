@@ -21,13 +21,8 @@ export function renderWithReactQuery(ui) {
 
   return {
     ...render(
-      <QueryClientProvider client={queryClient}>
-        {/* <CountersContextProvider> */}
-        {ui}
-        {/* </CountersContextProvider> */}
-      </QueryClientProvider>,
+      <QueryClientProvider client={queryClient}>{ui}</QueryClientProvider>,
     ),
-    history,
   };
 }
 
@@ -48,6 +43,5 @@ export function renderWithReactQueryContextAndRouter(ui) {
         </CountersContextProvider>
       </QueryClientProvider>,
     ),
-    history,
   };
 }
