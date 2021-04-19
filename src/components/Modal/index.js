@@ -1,9 +1,17 @@
-import { useState, useCallback, useRef } from 'react';
+import { useState, useEffect, useCallback, useRef } from 'react';
 import ReactDOM from 'react-dom';
 import classnames from 'classnames';
 import Transition from 'react-transition-group/Transition';
 
 import './Modal.css';
+
+/**
+ * Create root div to prevent error "Target container is not a DOM element."
+ * with React.createPortal() on testing
+ */
+const modalRoot = document.createElement('div');
+modalRoot.setAttribute('id', 'modal-outlet');
+document.body.appendChild(modalRoot);
 
 /**
  * Used for controlling an Modal
@@ -36,11 +44,15 @@ const Modal = ({
   onOpen,
   ...rest
 }) => {
+  const modalElement = document.createElement('div');
   const modalContentRef = useRef();
 
-  const handleEntered = () => {
-    // modalContentRef.current.focus();
+  useEffect(() => {
+    modalRoot.appendChild(modalElement);
+    return () => modalRoot.removeChild(modalElement);
+  });
 
+  const handleEntered = () => {
     typeof onOpen === 'function' && onOpen();
   };
 
@@ -77,7 +89,7 @@ const Modal = ({
         </div>
       )}
     </Transition>,
-    document.getElementById('modal-outlet'),
+    modalElement,
   );
 };
 
