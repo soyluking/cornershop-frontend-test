@@ -16,6 +16,7 @@ const Search = ({ search, setSearch, setFocus, disabled }) => (
       placeholder='Search Counters'
       disabled={disabled}
       size='big'
+      autoComplete='off'
       onChange={e => setSearch(e.target.value)}
       onFocus={setFocus}
       onBlur={setFocus}
